@@ -1,22 +1,26 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
-fun DependencyHandler.implementation(dependencyName: String) {
-    add("implementation", dependencyName)
+fun DependencyHandler.implementation(dependencyNotation: Any) {
+    add("implementation", dependencyNotation)
 }
 
-fun DependencyHandler.kapt(dependencyName: String) {
-    add("kapt", dependencyName)
+fun DependencyHandler.debugImplementation(dependencyNotation: Any) {
+    add("debugImplementation", dependencyNotation)
 }
 
-fun DependencyHandler.testImplementation(dependencyName: String) {
-    add("testImplementation", dependencyName)
+fun DependencyHandler.kapt(dependencyNotation: String) {
+    add("kapt", dependencyNotation)
 }
 
-fun DependencyHandler.androidTestImplementation(dependencyName: String) {
-    add("androidTestImplementation", dependencyName)
+fun DependencyHandler.testImplementation(dependencyNotation: String) {
+    add("testImplementation", dependencyNotation)
 }
 
-fun DependencyHandler.kaptAndroidTest(dependencyName: String) {
-    add("kaptAndroidTest", dependencyName)
+fun DependencyHandler.androidTestImplementation(dependencyNotation: String) {
+    add("androidTestImplementation", dependencyNotation)
+}
+
+fun DependencyHandler.kaptAndroidTest(dependencyNotation: String) {
+    add("kaptAndroidTest", dependencyNotation)
 }
 

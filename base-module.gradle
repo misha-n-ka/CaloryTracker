@@ -41,7 +41,6 @@ dependencies {
     testImplementation Testing.truth
     testImplementation Testing.coroutines
     testImplementation Testing.turbine
-    testImplementation Testing.composeUiTest
     testImplementation Testing.mockk
     testImplementation Testing.mockWebServer
 
@@ -50,7 +49,6 @@ dependencies {
     androidTestImplementation Testing.truth
     androidTestImplementation Testing.coroutines
     androidTestImplementation Testing.turbine
-    androidTestImplementation Testing.composeUiTest
     androidTestImplementation Testing.mockk
     androidTestImplementation Testing.mockWebServer
     androidTestImplementation Testing.hiltTesting
