@@ -46,12 +46,12 @@ object Compose {
 
 fun DependencyHandler.addComposeDependencies() {
     implementation(platform(composeBom))
+    implementation(material2)
     implementation(ui)
     implementation(uiToolingPreview)
     debugImplementation(debugUiTooling)
     implementation(runtime)
     implementation(hiltNavigationCompose)
-    implementation(material2)
     implementation(navigation)
     implementation(viewModelCompose)
     implementation(activityCompose)
