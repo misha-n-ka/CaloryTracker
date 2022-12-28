@@ -14,3 +14,7 @@
 .cxx
 local.properties
 .idea/vcs.xml
+.idea/.name
+.idea/git_toolbox_prj.xml
+.idea/gradle.xml
+.idea/misc.xml
