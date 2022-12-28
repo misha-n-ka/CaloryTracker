@@ -40,6 +40,11 @@ android {
 
 dependencies {
     implementation platform(Compose.composeBom)
+    implementation Compose.ui
+    implementation Compose.uiToolingPreview
+    debugImplementation Compose.debugUiTooling
+    implementation Compose.runtime
+    implementation Compose.material2
     implementation Compose.hiltNavigationCompose
     implementation Compose.navigation
     implementation Compose.viewModelCompose
