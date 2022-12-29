@@ -46,7 +46,7 @@ class HeightViewModel @Inject constructor(
                 return@launch
             }
 
-            preferences.saveAge(heightNumber)
+            preferences.saveHeight(heightNumber)
             _uiEvent.send(UiEvent.Navigate(Route.WEIGHT))
         }
     }
