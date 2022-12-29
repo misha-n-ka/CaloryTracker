@@ -57,6 +57,7 @@ fun GenderScreen(
                     onClick = { viewModel.onGenderClick(gender = Gender.Male) },
                     textStyle = MaterialTheme.typography.button.copy(fontWeight = FontWeight.Normal)
                 )
+                Spacer(modifier = Modifier.width(LocalSpacing.current.spaceMedium))
                 SelectableButton(
                     text = stringResource(id = R.string.female),
                     isSelected = viewModel.selectedGender is Gender.Female,
