@@ -13,22 +13,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mkirilkinprojects.core.R
 import com.mkirilkinprojects.core.domain.models.Gender
-import com.mkirilkinprojects.core.util.NavigationUiEvent
+import com.mkirilkinprojects.core.util.UiEvent
 import com.mkirilkinprojects.core_ui.LocalSpacing
 import com.mkirilkinprojects.onboarding_presentation.components.ActionButton
 import com.mkirilkinprojects.onboarding_presentation.components.SelectableButton
 
 @Composable
 fun GenderScreen(
-    onNavigate: (NavigationUiEvent.Navigate) -> Unit,
+    onNavigate: (UiEvent.Navigate) -> Unit,
     viewModel: GenderViewModel = hiltViewModel()
 ) {
     val spacing = LocalSpacing.current
     LaunchedEffect(key1 = true) {
-        viewModel.navigationUiEvent.collect { event ->
+        viewModel.uiEvent.collect { event ->
             when (event) {
-                is NavigationUiEvent.Navigate -> onNavigate(event)
-                is NavigationUiEvent.NavigateUp -> Unit
+                is UiEvent.Navigate -> onNavigate(event)
+                is UiEvent.NavigateUp, is UiEvent.ShowSnackbar -> Unit
             }
         }
     }
