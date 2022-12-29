@@ -35,6 +35,7 @@ fun SelectableButton(
             .border(
                 color = color,
                 width = 2.dp,
+                shape = RoundedCornerShape(100.dp)
             )
             .background(
                 color = if (isSelected) color else Color.Transparent
@@ -57,7 +58,7 @@ fun SelectableButton(
 fun PreviewSelectableButton() {
     SelectableButton(
         text = "hello",
-        isSelected = true,
+        isSelected = false,
         color = Color.Green,
         selectedTextColor = Color.White,
         onClick = { /*TODO*/ })
