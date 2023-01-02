@@ -12,6 +12,6 @@ object Room {
 
 fun DependencyHandler.addRoomDependencies() {
     kapt(roomCompiler)
-    implementation(roomKtx)
-    implementation(roomRuntime)
+    api(roomKtx)
+    api(roomRuntime)
 }

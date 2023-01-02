@@ -15,8 +15,8 @@ object Retrofit {
 }
 
 fun DependencyHandler.addRetrofitDependencies() {
-    implementation(okHttp)
-    implementation(retrofit)
-    implementation(okHttpLoggingInterceptor)
-    implementation(moshiConverter)
+    api(okHttp)
+    api(retrofit)
+    api(okHttpLoggingInterceptor)
+    api(moshiConverter)
 }
