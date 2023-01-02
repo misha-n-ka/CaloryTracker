@@ -1,9 +1,13 @@
 package com.mkirilkinprojects.tracker_data.di
 
+import android.app.Application
+import androidx.room.Room
+import com.mkirilkinprojects.tracker_data.local.TrackerDatabase
 import com.mkirilkinprojects.tracker_data.remote.OpenFoodApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -37,5 +41,15 @@ object TrackerDataModule {
             .client(ohHttpClient)
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTrackerDatabase(@ApplicationContext app: Application): TrackerDatabase {
+        return Room.databaseBuilder(
+            app,
+            TrackerDatabase::class.java,
+            "tracker_db"
+        ).build()
     }
 }
