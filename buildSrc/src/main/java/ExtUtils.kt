@@ -4,6 +4,10 @@ fun DependencyHandler.implementation(dependencyNotation: Any) {
     add("implementation", dependencyNotation)
 }
 
+fun DependencyHandler.api(dependencyNotation: Any) {
+    add("api", dependencyNotation)
+}
+
 fun DependencyHandler.debugImplementation(dependencyNotation: Any) {
     add("debugImplementation", dependencyNotation)
 }
