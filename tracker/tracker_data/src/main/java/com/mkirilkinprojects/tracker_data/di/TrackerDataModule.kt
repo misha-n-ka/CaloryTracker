@@ -9,7 +9,6 @@ import com.mkirilkinprojects.tracker_domain.repository.TrackerRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -47,7 +46,7 @@ object TrackerDataModule {
 
     @Provides
     @Singleton
-    fun provideTrackerDatabase(@ApplicationContext app: Application): TrackerDatabase {
+    fun provideTrackerDatabase(app: Application): TrackerDatabase {
         return Room.databaseBuilder(
             app,
             TrackerDatabase::class.java,
