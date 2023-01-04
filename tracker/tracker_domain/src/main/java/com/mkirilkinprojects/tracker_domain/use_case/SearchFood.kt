@@ -8,7 +8,7 @@ class SearchFood(
 ) {
     suspend operator fun invoke(
         query: String,
-        page: Int,
+        page: Int = 1,
         pageSize: Int = 40
     ): Result<List<TrackableFood>> {
         if (query.isBlank()) {
