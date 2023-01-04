@@ -62,7 +62,7 @@ fun NutrientGoalScreen(
             )
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             UnitTextField(
-                value = viewModel.state.proteinRation,
+                value = viewModel.state.proteinRatio,
                 onValueChange = { viewModel.onEvent(NutrientGoalEvent.OnProteinRatioEnter(it)) },
                 unit = stringResource(R.string.percent_proteins)
             )
