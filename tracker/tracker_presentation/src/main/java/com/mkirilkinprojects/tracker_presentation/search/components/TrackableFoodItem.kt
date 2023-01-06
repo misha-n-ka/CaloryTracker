@@ -27,11 +27,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.mkirilkinprojects.core_ui.LocalSpacing
+import com.mkirilkinprojects.tracker_domain.model.TrackableFood
 import com.mkirilkinprojects.tracker_presentation.R
 import com.mkirilkinprojects.tracker_presentation.components.NutrientInfo
 import com.mkirilkinprojects.tracker_presentation.search.TrackableFoodUiState
@@ -183,4 +185,24 @@ fun TrackableFoodItem(
             }
         }
     }
+}
+
+
+@Preview
+@Composable
+fun PreviewTrackableFoodItem() {
+    TrackableFoodItem(
+        trackableFoodsUiState = TrackableFoodUiState(
+            food = TrackableFood(
+                name = "asdljansdljasasdndjka",
+                imageUrl = null,
+                carbsPer100g = 201,
+                caloriesPer100g = 200,
+                proteinPer100g = 202,
+                fatPer100g = 203
+            )
+        ),
+        onClick = { /*TODO*/ },
+        onAmountChange = { },
+        onTrack = { /*TODO*/ })
 }
