@@ -1,4 +1,4 @@
-package com.mkirilkinprojects.tracker_presentation.search
+package com.mkirilkinprojects.tracker_presentation.search.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

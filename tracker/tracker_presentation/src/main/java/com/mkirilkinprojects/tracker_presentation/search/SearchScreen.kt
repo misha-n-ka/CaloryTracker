@@ -15,6 +15,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.mkirilkinprojects.core.util.UiEvent
 import com.mkirilkinprojects.core_ui.LocalSpacing
 import com.mkirilkinprojects.tracker_presentation.R
+import com.mkirilkinprojects.tracker_presentation.search.components.SearchTextField
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
