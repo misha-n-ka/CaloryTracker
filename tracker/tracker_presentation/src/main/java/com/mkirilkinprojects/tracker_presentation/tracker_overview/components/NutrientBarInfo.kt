@@ -25,7 +25,7 @@ import com.mkirilkinprojects.tracker_presentation.R
 import com.mkirilkinprojects.tracker_presentation.components.UnitDisplay
 
 @Composable
-fun NutrientBatInfo(
+fun NutrientBarInfo(
     value: Int,
     goal: Int,
     name: String,

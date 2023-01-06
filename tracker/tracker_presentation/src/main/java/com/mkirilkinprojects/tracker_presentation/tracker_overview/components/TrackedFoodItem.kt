@@ -57,6 +57,7 @@ fun TrackedFoodItem(
                     .crossfade(true)
                     .error(R.drawable.ic_burger)
                     .fallback(R.drawable.ic_burger)
+                    .build()
             ),
             contentDescription = trackedFood.name,
             contentScale = ContentScale.Crop,
@@ -71,7 +72,7 @@ fun TrackedFoodItem(
                 )
         )
         Spacer(modifier = Modifier.width(spacing.spaceMedium))
-        Column(/*modifier = Modifier.weight(1f)*/) {
+        Column(modifier = Modifier.weight(1f)) {
             Text(
                 text = trackedFood.name,
                 style = MaterialTheme.typography.body1,

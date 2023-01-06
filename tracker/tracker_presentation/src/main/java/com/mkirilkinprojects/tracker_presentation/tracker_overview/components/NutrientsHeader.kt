@@ -86,21 +86,21 @@ fun NutrientsHeader(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            NutrientBatInfo(
+            NutrientBarInfo(
                 value = state.totalCarbs,
                 goal = state.carbsGoal,
                 name = stringResource(id = R.string.carbs),
                 color = CarbColor,
                 modifier = Modifier.size(90.dp)
             )
-            NutrientBatInfo(
+            NutrientBarInfo(
                 value = state.totalProtein,
                 goal = state.proteinGoal,
                 name = stringResource(id = R.string.protein),
                 color = ProteinColor,
                 modifier = Modifier.size(90.dp)
             )
-            NutrientBatInfo(
+            NutrientBarInfo(
                 value = state.totalFat,
                 goal = state.fatGoal,
                 name = stringResource(id = R.string.fat),
