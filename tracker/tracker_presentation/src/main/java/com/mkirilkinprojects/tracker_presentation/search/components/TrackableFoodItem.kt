@@ -47,16 +47,17 @@ fun TrackableFoodItem(
     val food = trackableFoodsUiState.food
     val spacing = LocalSpacing.current
     val context = LocalContext.current
-    Column(modifier = modifier
-        .clip(RoundedCornerShape(5.dp))
-        .padding(spacing.spaceExtraSmall)
-        .shadow(
-            elevation = 1.dp,
-            shape = RoundedCornerShape(5.dp)
-        )
-        .background(MaterialTheme.colors.surface)
-        .clickable { onClick() }
-        .padding(end = spacing.spaceMedium)
+    Column(
+        modifier = modifier
+            .clip(RoundedCornerShape(5.dp))
+            .padding(spacing.spaceExtraSmall)
+            .shadow(
+                elevation = 1.dp,
+                shape = RoundedCornerShape(5.dp)
+            )
+            .background(MaterialTheme.colors.surface)
+            .clickable { onClick() }
+            .padding(end = spacing.spaceMedium)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -100,34 +101,33 @@ fun TrackableFoodItem(
                         style = MaterialTheme.typography.body2
                     )
                 }
-                Row(horizontalArrangement = Arrangement.spacedBy(spacing.spaceSmall)) {
-                    NutrientInfo(
-                        name = stringResource(id = R.string.carbs),
-                        amount = food.carbsPer100g,
-                        unit = stringResource(id = R.string.grams),
-                        amountTextSize = 16.sp,
-                        unitTextSize = 12.sp,
-                        nameTextStyle = MaterialTheme.typography.body2
-                    )
-                    NutrientInfo(
-                        name = stringResource(id = R.string.protein),
-                        amount = food.proteinPer100g,
-                        unit = stringResource(id = R.string.grams),
-                        amountTextSize = 16.sp,
-                        unitTextSize = 12.sp,
-                        nameTextStyle = MaterialTheme.typography.body2
-                    )
-                    NutrientInfo(
-                        name = stringResource(id = R.string.fat),
-                        amount = food.fatPer100g,
-                        unit = stringResource(id = R.string.grams),
-                        amountTextSize = 16.sp,
-                        unitTextSize = 12.sp,
-                        nameTextStyle = MaterialTheme.typography.body2
-                    )
-                }
             }
-
+            Row(horizontalArrangement = Arrangement.spacedBy(spacing.spaceSmall)) {
+                NutrientInfo(
+                    name = stringResource(id = R.string.carbs),
+                    amount = food.carbsPer100g,
+                    unit = stringResource(id = R.string.grams),
+                    amountTextSize = 16.sp,
+                    unitTextSize = 12.sp,
+                    nameTextStyle = MaterialTheme.typography.body2
+                )
+                NutrientInfo(
+                    name = stringResource(id = R.string.protein),
+                    amount = food.proteinPer100g,
+                    unit = stringResource(id = R.string.grams),
+                    amountTextSize = 16.sp,
+                    unitTextSize = 12.sp,
+                    nameTextStyle = MaterialTheme.typography.body2
+                )
+                NutrientInfo(
+                    name = stringResource(id = R.string.fat),
+                    amount = food.fatPer100g,
+                    unit = stringResource(id = R.string.grams),
+                    amountTextSize = 16.sp,
+                    unitTextSize = 12.sp,
+                    nameTextStyle = MaterialTheme.typography.body2
+                )
+            }
         }
         AnimatedVisibility(visible = trackableFoodsUiState.isExpanded) {
             Row(
