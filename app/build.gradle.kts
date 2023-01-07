@@ -15,7 +15,7 @@ android {
         versionCode = ProjectConfig.versionCode
         versionName = ProjectConfig.versionName
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.mkirilkinprojects.calorytracker.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -38,6 +38,9 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
 }
 

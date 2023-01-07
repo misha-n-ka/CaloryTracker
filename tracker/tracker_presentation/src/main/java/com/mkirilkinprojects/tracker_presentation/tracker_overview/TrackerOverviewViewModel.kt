@@ -20,7 +20,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TrackerOverviewViewModel @Inject constructor(
     preferences: Preferences,
-    private val trackerUserCases: TrackerUseCases
+    private val trackerUseCases: TrackerUseCases
 ) : ViewModel() {
 
     var state by mutableStateOf(TrackerOverviewState())
@@ -40,7 +40,7 @@ class TrackerOverviewViewModel @Inject constructor(
         when (event) {
             is TrackerOverviewEvent.OnDeleteTrackedFoodClick -> {
                 viewModelScope.launch {
-                    trackerUserCases.deleteTrackedFood(event.trackedFood)
+                    trackerUseCases.deleteTrackedFood(event.trackedFood)
                     refreshFoods()
                 }
             }
@@ -71,10 +71,10 @@ class TrackerOverviewViewModel @Inject constructor(
 
     private fun refreshFoods() {
         getFoodsForDateJob?.cancel()
-        getFoodsForDateJob = trackerUserCases
+        getFoodsForDateJob = trackerUseCases
             .getFoodsForDate(state.date)
             .onEach { foods ->
-                val nutrientsResult = trackerUserCases.calculateMealNutrients(foods)
+                val nutrientsResult = trackerUseCases.calculateMealNutrients(foods)
                 state = state.copy(
                     totalCarbs = nutrientsResult.totalCarbs,
                     totalProtein = nutrientsResult.totalProtein,
