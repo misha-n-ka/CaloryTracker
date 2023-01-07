@@ -29,7 +29,20 @@ class TrackerRepositoryImpl(
                 pageSize = pageSize
             )
             Result.success(
-                searchDto.products.mapNotNull { it.toTrackableFood() }
+                searchDto.products
+                    .filter { product ->
+                        val caloriesInOneCarb = 4f
+                        val caloriesInOneProtein = 4f
+                        val caloriesInOneFat = 9f
+                        val calculatedCalories =
+                            product.nutriments.carbohydrates100g * caloriesInOneCarb +
+                                    product.nutriments.proteins100g * caloriesInOneProtein +
+                                    product.nutriments.fat100g * caloriesInOneFat
+                        val lowerBound = calculatedCalories * 0.99f
+                        val upperBound = calculatedCalories * 1.01f
+                        product.nutriments.energyKcal100g in (lowerBound..upperBound)
+                    }
+                    .mapNotNull { it.toTrackableFood() }
             )
         } catch (e: Exception) {
             e.printStackTrace()

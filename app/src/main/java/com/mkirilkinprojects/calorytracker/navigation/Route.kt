@@ -1,4 +1,4 @@
-package com.mkirilkinprojects.core.navigation
+package com.mkirilkinprojects.calorytracker.navigation
 
 object Route {
 
