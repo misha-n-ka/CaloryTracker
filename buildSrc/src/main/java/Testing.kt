@@ -1,3 +1,5 @@
+import Testing.composeUiDebugTest
+import Testing.composeUiTest
 import Testing.coroutines
 import Testing.hiltTesting
 import Testing.junit4
@@ -33,6 +35,11 @@ object Testing {
     private const val mockWebServerVersion = Retrofit.okHttpVersion
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion"
 
+    const val composeUiTest =
+        "androidx.compose.ui:ui-test-junit4:${Compose.composeCompilerVersion}"
+    const val composeUiDebugTest =
+        "androidx.compose.ui:ui-test-manifest:${Compose.composeCompilerVersion}"
+
     const val hiltTesting = "com.google.dagger:hilt-android-testing:${DaggerHilt.version}"
 
     private const val testRunnerVersion = "1.4.0"
@@ -59,5 +66,7 @@ fun DependencyHandler.addAndroidTestingDependencies() {
     androidTestImplementation(mockWebServer)
     androidTestImplementation(hiltTesting)
     androidTestImplementation(testRunner)
+    androidTestImplementation(composeUiTest)
+    debugImplementation(composeUiDebugTest)
     kaptAndroidTest(DaggerHilt.hiltCompiler)
 }
